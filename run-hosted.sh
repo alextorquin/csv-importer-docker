@@ -5,7 +5,7 @@
 #
 # Create a personal access token in your Firefly III installation, under 'Profile'
 #
-PERSONAL_ACCESS_TOKEN=ey...
+PERSONAL_ACCESS_TOKEN=ey312$!@#142312@$&$%*49435@#$@#%!#^34515#$%
 
 #
 # This is the full path to your Firefly III installation:
