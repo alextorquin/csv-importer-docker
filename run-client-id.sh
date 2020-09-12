@@ -4,9 +4,10 @@
 #
 
 #
-# Create a personal access token in your Firefly III installation, under 'Profile'
+# Create a client ID in your Firefly III installation, under 'Profile'.
+# Make sure you UNcheck the "confidential" checkbox.
 #
-PERSONAL_ACCESS_TOKEN=ey...
+CLIENT_ID=0
 
 #
 # This is the full path to your Firefly III installation:
@@ -19,7 +20,7 @@ FIREFLY_III_URI=http:/172.17.0.3/
 
 docker run \
 --rm \
--e FIREFLY_III_ACCESS_TOKEN=$PERSONAL_ACCESS_TOKEN \
+-e FIREFLY_III_CLIENT_ID=$CLIENT_ID \
 -e FIREFLY_III_URI=$FIREFLY_III_URI \
 -p 8081:80 \
 fireflyiii/csv-importer:latest
