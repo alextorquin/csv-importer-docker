@@ -1,25 +1,13 @@
-FROM fireflyiii/tools-base-image:latest-arm
-# To learn more about this base image, visit https://github.com/firefly-iii/tools-base-image
+FROM --platform=linux/arm fireflyiii/tools-base-image:latest
 
-ARG RELEASE=develop
-ENV HOMEPATH=/var/www/html COMPOSER_ALLOW_SUPERUSER=1
-LABEL version="1.0" maintainer="thegrumpydictator@gmail.com"
+# To learn more about this base image, visit https://github.com/firefly-iii/docker-base-image
 
-COPY scripts/site.conf /etc/apache2/sites-available/000-default.conf
+ARG version
+ENV VERSION=$version
+LABEL version="1.1" maintainer="thegrumpydictator@gmail.com"
 
-# install Firefly III CSV Importer and patch configuration
-WORKDIR $HOMEPATH
+RUN curl -SL https://github.com/firefly-iii/csv-importer/archive/$VERSION.tar.gz | tar xzC $FIREFLY_III_PATH --strip-components 1 && \
+    chmod -R 775 $FIREFLY_III_PATH/storage && \
+    composer install --prefer-dist --no-dev --no-scripts --no-suggest && /usr/local/bin/finalize-image.sh
 
-RUN curl -SL https://github.com/firefly-iii/csv-importer/archive/$RELEASE.tar.gz | tar xzC $HOMEPATH --strip-components 1 && chown -R www-data:www-data $HOMEPATH && \
-    chmod -R 775 $HOMEPATH/storage && \
-    composer install --prefer-dist --no-dev --no-scripts --no-suggest
-
-# Expose port 80
-EXPOSE 80
-
-ADD scripts/entrypoint.sh /entrypoint.sh
-
-RUN chmod +x /entrypoint.sh
-
-# Run entrypoint thing
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
