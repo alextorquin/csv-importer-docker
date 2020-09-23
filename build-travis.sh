@@ -1,18 +1,23 @@
 #!/usr/bin/env bash
 
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+
 #
 # Step 1: set repos name.
 #
-#REPOS_NAME=jc5x/test-repository
+REPOS_NAME=jc5x/test-repository
 #REPOS_NAME=jc5x/firefly-iii
-REPOS_NAME=fireflyiii/csv-importer
+#REPOS_NAME=fireflyiii/csv-importer
 
 #
 # Step 2: echo some info
 #
-echo "build-travis.sh v1.0: I am building '${VERSION}' for ${REPOS_NAME}."
+echo "build-travis.sh v1.2: I am building '${VERSION}' of CSV tool for ${REPOS_NAME}."
 
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+if [[ "$DOCKER_USERNAME" != "" ]]; then
+	echi 'Optional login!'
+	echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+fi
 
 # new script start
 
@@ -45,8 +50,7 @@ fi
 
 echo "Version is '$VERSION' so label will be '$LABEL'."
 
-# build firefly iii (TODO)
-#docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6 --build-arg version=$VERSION -t $REPOS_NAME:$PUSHVERSION --push . -f Dockerfile --buildarg 
+# build CSV importer.
 docker buildx build  --build-arg version=$VERSION --platform linux/amd64,linux/arm64,linux/arm/v7 -t $REPOS_NAME:$LABEL --push . -f Dockerfile
 
 echo "Done!"

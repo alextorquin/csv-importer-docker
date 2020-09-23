@@ -4,7 +4,10 @@ FROM jc5x/firefly-iii-base-image:latest
 
 ARG version
 ENV VERSION=$version
-LABEL version="1.1" maintainer="thegrumpydictator@gmail.com"
+
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+LABEL version="1.2" maintainer="thegrumpydictator@gmail.com"
 
 RUN curl -SL https://github.com/firefly-iii/csv-importer/archive/$VERSION.tar.gz | tar xzC $FIREFLY_III_PATH --strip-components 1 && \
     chmod -R 775 $FIREFLY_III_PATH/storage && \
