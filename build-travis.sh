@@ -5,9 +5,8 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 #
 # Step 1: set repos name.
 #
-REPOS_NAME=jc5x/test-repository
-#REPOS_NAME=jc5x/firefly-iii
-#REPOS_NAME=fireflyiii/csv-importer
+#REPOS_NAME=jc5x/test-repository
+REPOS_NAME=fireflyiii/csv-importer
 
 #
 # Step 2: echo some info
