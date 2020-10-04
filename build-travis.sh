@@ -7,6 +7,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 #
 #REPOS_NAME=jc5x/test-repository
 REPOS_NAME=fireflyiii/csv-importer
+PLATFORMS=linux/amd64,linux/arm64,linux/arm/v7
 
 #
 # Step 2: echo some info
@@ -50,6 +51,6 @@ fi
 echo "Version is '$VERSION' so label will be '$LABEL'."
 
 # build CSV importer.
-docker buildx build  --build-arg version=$VERSION --platform linux/amd64,linux/arm64,linux/arm/v7 -t $REPOS_NAME:$LABEL --push . -f Dockerfile
+docker buildx build  --build-arg version=$VERSION --platform $PLATFORMS -t $REPOS_NAME:$LABEL --push . -f Dockerfile
 
 echo "Done!"
