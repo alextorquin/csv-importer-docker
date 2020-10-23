@@ -2,7 +2,6 @@
 
 [![Packagist](https://img.shields.io/packagist/v/firefly-iii/csv-importer.svg?style=flat-square)](https://packagist.org/packages/firefly-iii/csv-importer) 
 [![License](https://img.shields.io/github/license/firefly-iii/csv-importer.svg?style=flat-square])](https://www.gnu.org/licenses/agpl-3.0.html) 
-[![Donate using Paypal](https://img.shields.io/badge/donate-PayPal-green?logo=paypal&style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L62W7DVD5ETPC&source=url) 
 [![Donate using Patreon](https://img.shields.io/badge/donate-%40JC5-green?logo=patreon&style=flat-square)](https://www.patreon.com/jc5)
 [![Donate using GitHub](https://img.shields.io/badge/donate-GitHub-green?logo=github&style=flat-square)](https://github.com/sponsors/JC5)
 
