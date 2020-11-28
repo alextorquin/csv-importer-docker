@@ -12,7 +12,7 @@ PERSONAL_ACCESS_TOKEN=eyJ0...
 # This is the full path to your Firefly III installation.
 # Remove any trailing slashes, please!
 #
-FIREFLY_III_URI=https://demo.firefly-iii.org
+FIREFLY_III_URL=https://demo.firefly-iii.org
 
 #
 # There is no need to touch anything after this point, but if you're smart you're free to do so.
@@ -21,6 +21,6 @@ FIREFLY_III_URI=https://demo.firefly-iii.org
 docker run \
 --rm \
 -e FIREFLY_III_ACCESS_TOKEN=$PERSONAL_ACCESS_TOKEN \
--e FIREFLY_III_URI=$FIREFLY_III_URI \
+-e FIREFLY_III_URL=$FIREFLY_III_URL \
 -p 8081:8080 \
 fireflyiii/csv-importer:latest
