@@ -10,7 +10,7 @@ This repository contains the scripts that automatically build the Firefly III CS
 Here are some links for your reading pleasure.
 
 - [Firefly III on GitHub](https://github.com/firefly-iii/firefly-iii)
-- [CSV Importer Documentation](https://firefly-iii.gitbook.io/firefly-iii-csv-importer/)
+- [CSV Importer Documentation](https://csv-docs.firefly-iii.org/)
 - [Firefly III CSV Importer on Docker Hub](https://hub.docker.com/r/fireflyiii/csv-importer)
 - [Firefly III on Travis CI](https://travis-ci.com/firefly-iii/csv-importer-docker)
 
