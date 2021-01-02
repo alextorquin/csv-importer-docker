@@ -6,23 +6,18 @@
 #REPOS_NAME=jc5x/test-repository
 REPOS_NAME=fireflyiii/csv-importer
 
-# linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6
-#PLATFORMS="linux/amd64"
-PLATFORMS="linux/amd64,linux/arm64,linux/arm/v7"
+PLATFORMS=linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/386
 
 #
 # Step 2: echo some info
 #
-echo "build-travis.sh v1.1: I am building '${VERSION}' for ${REPOS_NAME}."
+echo "build-travis.sh v1.1 (2021-01-02): I am building '${VERSION}' for ${REPOS_NAME}."
 
 
 
 # new script start
 
 echo "Current directory is $DIR"
-
-docker version -f '{{.Server.Experimental}}'
-docker version
 
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes i
 docker buildx create --name firefly_iii_builder
