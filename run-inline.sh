@@ -12,7 +12,7 @@ PERSONAL_ACCESS_TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpI
 # This is the full path to your Firefly III installation.
 # Remove any trailing slashes, please!
 #
-FIREFLY_III_URL=http://192.168.1.70:8090
+FIREFLY_III_URL=http://fireflyiii:8080
 
 #
 # There is no need to touch anything after this point, but if you're smart you're free to do so.
